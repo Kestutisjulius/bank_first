@@ -1,0 +1,37 @@
+body{
+    display: block;
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+main{
+    display: grid;
+    grid-template-columns:  min-content auto;
+}
+.bankUserInfo{
+    position: fixed;
+    top: 0;
+    display: block;
+    width: 100vw;
+    height: 20px;
+    background-color: dimgrey;
+}
+.workPage ,.infoPage{
+    border: 1px solid darkslategrey;
+    margin-top: 20px;
+}
+.bankInfo{
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100vw;
+    height: 25px;
+    background-color: darkslategrey;
+}
+.btn{
+    display: block;
+    font-size: 10px;
+    font-family: Corbel;
+    width: 55px;
+    margin: 15px;
+}
