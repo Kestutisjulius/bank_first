@@ -1,3 +1,4 @@
+@import "./right.css";
 body{
     display: block;
     background-color: antiquewhite;
@@ -8,30 +9,40 @@ main{
     display: grid;
     grid-template-columns:  min-content auto;
 }
-.bankUserInfo{
-    position: fixed;
-    top: 0;
-    display: block;
-    width: 100vw;
-    height: 20px;
-    background-color: dimgrey;
+
+    .btn {
+
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px;
+        background-color: #000055;
+        color: #CCCCCC;
+        text-align: center;
+        vertical-align: center;
+        border-radius: 10px;
+        font-size: 20px;
+        line-height: 1.2em;
+        font-family: Nyala;
+        width: 85px;
+        height: 20px;
+        margin: 5px 20px;
+    }
+
+
+.workPage{
+
+    padding-top: 83px;
 }
-.workPage ,.infoPage{
-    border: 1px solid darkslategrey;
-    margin-top: 20px;
+.infoPage{
+    height: 100vh;
 }
-.bankInfo{
-    position: fixed;
-    bottom: 0;
-    display: block;
-    width: 100vw;
-    height: 25px;
-    background-color: darkslategrey;
-}
-.btn{
-    display: block;
-    font-size: 10px;
-    font-family: Corbel;
-    width: 55px;
-    margin: 15px;
+
+@media (max-width: 685px) {
+    .btn {
+        font-size: 16px;
+        width: 35px;
+        height: 40px;
+        margin: 3px;
+        background-color: darkred;
+    }
 }
