@@ -1,0 +1,51 @@
+@import "main.css";
+.font{
+    font-family: Nyala;
+}
+.h1-update{
+    background-color: #000055;
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+    font-size: 26px;
+    padding: 10px 0;
+}
+.gender{
+    display: inline-block;
+    background-color: #000055;
+    color: #fff;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-right: 10%;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    padding-top: 3px;
+}
+.sumLabel{
+    padding: 3px 0;
+    margin: 3px 20px 3px 0;
+}
+.sumInput{
+    display: inline-block;
+}
+.haveFund{
+    margin: 0 ;
+    color: red;
+    background-color: lightskyblue;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+    padding: 7px;
+    border-radius: 7px;
+}
+.label{
+    display: block;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+.together{
+    padding: 10px;
+}
