@@ -113,13 +113,16 @@ form label
 .submit_c{
     visibility: hidden;
 }
+.submit_o{
+    visibility: hidden;
+}
 .submit_b:hover {
     cursor: pointer;
 }
 .submit_a:hover {
     cursor: pointer;
 }
-.submit_b_b, .submit_u_u{
+.submit_b_b, .submit_u_u, .submit_o_o{
     text-align: center;
     border-radius: 12px;
     border: none;
@@ -135,8 +138,12 @@ form label
 .submit_u_u{
     background-color: #9BFF9B;
 }
-.submit_b_b, .submit_u_u:hover{
+.submit_b_b, .submit_u_u, .submit_o_o:hover{
     cursor: pointer;
+}
+.submit_o_o{
+    background-color: #000055;
+    color: #FACC5F;
 }
 .form-group{
     display: flex;

@@ -54,13 +54,16 @@ require __DIR__.'/data/get_users.php';
                                             }
                                         }
                                     ?>
-                                <h4><?php echo($key) ?>: </h4><h3><?php (!is_array($value)) ?print_r($value) : trans($transaction) ?></h3><div class="br"></div>
+                                <h4><?php echo($key) ?>: </h4><h3><?php (!is_array($value)) ?print_r($value) : trans($value) ?></h3><div class="br"></div>
                               <?php  } ?><div class="form-group">
                               <form action="./php/delete.php" method="get" class="form-delete">
                                 <button class="submit_b_b" name="Delete" type="submit" value="<?php print_r($objKey)?>">DELETE -><input class="submit_b" placeholder="trink"/></button>
                               </form>
                               <form action="./php/update.php" method="get" class="form-update">
-                                <button class="submit_u_u" name="update" type="submit" value="<?php print_r($objKey)?> ">UPDATE -><input class="submit_c" placeholder="reNew"/></button>
+                                <button class="submit_u_u" name="update" type="submit" value="<?php print_r($objKey)?>">UPDATE -><input class="submit_c" placeholder="reNew"/></button>
+                              </form>
+                              <form action="./php/order.php" method="get" class="form-order">
+                                <button class="submit_o_o" name="order" type="submit" value="<?php print_r($objKey)?>">ORDER -><input class="submit_o" placeholder="order"/></button>
                               </form>
                                 </div>
                                 <div class="red"></div>

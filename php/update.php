@@ -23,6 +23,7 @@ if (isset($_GET['update'])){
             <h1 class="h1-update">Update: <?php echo $currentUser['Name']?> with ID [<?php echo $currentUser['id']?>]</h1>
             <form action="./edit.php" method="post" class="form"> <!-- action - i kur siusti -->
                 <input type="hidden"  id="hidden"  name="hidden" value="<?php echo $currentUser['id']?>">
+                <input type="hidden"  id="gndr"  name="gndr" value="<?php echo $currentUser['Gender']?>">
                 <div class="gender"><?php echo $currentUser['Gender']?></div>
                 <label class="label" for="aname">Avatar Name: </label>
                 <input type="text" id="aname" name="avatar_name" value="<?php echo $currentUser['Avatar name']?>">
