@@ -10,15 +10,15 @@ require __DIR__.'/data/get_users.php';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./CSS/main.css">
-    <title>Document</title>
+    <title>K-Bank program</title>
 </head>
 <body>
 
         <main>
             <div class="workPage">
-                <a class="btn" type="button" href="http://localhost/vienaragiai/bank_first/?u=1">All</a>
-                <a class="btn" type="button" href="http://localhost/vienaragiai/bank_first/?a=1">Add</a>
-                <a id="btn" class="btn" type="button" href="http://localhost/vienaragiai/bank_first/?i=1">Bank INFO</a>
+                <a class="btn" type="button" href="http://localhost/bank_first/?u=1">All</a>
+                <a class="btn" type="button" href="http://localhost/bank_first/?a=1">Add</a>
+                <a id="btn" class="btn" type="button" href="http://localhost/bank_first/?i=1">Bank INFO</a>
             </div>
             <div class="background">
                 <div class="logo"></div>
@@ -35,20 +35,32 @@ require __DIR__.'/data/get_users.php';
                     /** u -----------------------------------------------------------------------------*/
                     if(isset($_GET['u']) == 1){
                         $allUsers = USERS;
+                        $transaction=[];
+                    function trans($array)
+                    {
+                        foreach ($array as $record) {
+                            print_r("$record".'<br>');
+                        }
+                    }
                         if (empty($allUsers)){
                             echo '<pre>';
                             print_r($_SERVER);
                         } else {
                             foreach ($allUsers as $objKey => $USER){
                                 foreach ($USER as $key => $value){
+                                        if(is_array($value)) {
+                                            foreach ($value as $dateTime => $transactionSum) {
+                                                $transaction[] = $transactionSum;
+                                            }
+                                        }
                                     ?>
-                                <h4><?php echo($key) ?>: </h4><h3><?php echo($value) ?></h3><?php echo '<div class="br"></div>';
-                                } ?><div class="form-group">
+                                <h4><?php echo($key) ?>: </h4><h3><?php (!is_array($value)) ?print_r($value) : trans($transaction) ?></h3><div class="br"></div>
+                              <?php  } ?><div class="form-group">
                               <form action="./php/delete.php" method="get" class="form-delete">
                                 <button class="submit_b_b" name="Delete" type="submit" value="<?php print_r($objKey)?>">DELETE -><input class="submit_b" placeholder="trink"/></button>
                               </form>
                               <form action="./php/update.php" method="get" class="form-update">
-                                <button class="submit_u_u" name="update" type="submit" value="<?php print_r($USER)?> ">UPDATE -><input class="submit_c" placeholder="reNew"/></button>
+                                <button class="submit_u_u" name="update" type="submit" value="<?php print_r($objKey)?> ">UPDATE -><input class="submit_c" placeholder="reNew"/></button>
                               </form>
                                 </div>
                                 <div class="red"></div>
@@ -56,6 +68,7 @@ require __DIR__.'/data/get_users.php';
                                 <?php
                             }
                         }
+
                         ?>
                         <div class="table">
                         </div>

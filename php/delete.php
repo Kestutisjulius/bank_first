@@ -15,5 +15,5 @@ if (isset($_GET['Delete'])){
     $updated_data = json_encode($temp);
     file_put_contents(__DIR__ . '/../data/users.json', $updated_data);
 }
-    header('Location: http://localhost/vienaragiai/bank_first/?i=1');
+    header('Location: http://localhost/bank_first/?i=1');
     die;
