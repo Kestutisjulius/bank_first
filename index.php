@@ -36,6 +36,12 @@ require __DIR__.'/data/get_users.php';
                     if(isset($_GET['u']) == 1){
                         $allUsers = USERS;
                         $transaction=[];
+                    function trans($array)
+                    {
+                        foreach ($array as $record) {
+                            print_r("$record".'<br>');
+                        }
+                    }
                         if (empty($allUsers)){
                             echo '<pre>';
                             print_r($_SERVER);
@@ -48,7 +54,7 @@ require __DIR__.'/data/get_users.php';
                                             }
                                         }
                                     ?>
-                                <h4><?php echo($key) ?>: </h4><h3></h3><div class="br"></div>
+                                <h4><?php echo($key) ?>: </h4><h3><?php (!is_array($value)) ?print_r($value) : trans($transaction) ?></h3><div class="br"></div>
                               <?php  } ?><div class="form-group">
                               <form action="./php/delete.php" method="get" class="form-delete">
                                 <button class="submit_b_b" name="Delete" type="submit" value="<?php print_r($objKey)?>">DELETE -><input class="submit_b" placeholder="trink"/></button>
